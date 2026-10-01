@@ -127,8 +127,10 @@
                     </div>
                 </div>
                 
-                <!-- Tombol Hapus -->
-                <button wire:click="hapusData({{ $item->id }})" class="bg-blue-500 hover:bg-blue-600 text-white text-[10px] font-bold py-1 px-2 rounded h-fit">
+                <!-- Tombol Hapus dengan Konfirmasi -->
+                <button wire:click="hapusData({{ $item->id }})" 
+                        onclick="confirm('Apakah Anda yakin ingin menghapus data telemetri ini?') || event.stopImmediatePropagation()" 
+                        class="bg-blue-500 hover:bg-blue-600 text-white text-[10px] font-bold py-1 px-2 rounded h-fit">
                     Hapus
                 </button>
             </div>

@@ -43,7 +43,12 @@ class Dashboard extends Component
 
     public function hapusData($id)
     {
-        EnclosureLog::find($id)->delete();
+        $log = EnclosureLog::find($id);
+        
+        // Pastikan datanya ada sebelum dihapus agar tidak error
+        if ($log) {
+            $log->delete();
+        }
     }
 
     public function resetFilter()
